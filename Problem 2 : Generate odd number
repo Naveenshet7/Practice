@@ -1,0 +1,18 @@
+def generate_odd_series(a):
+    if str(a).lower() == 'x':
+        print("Generating infinite odd numbers (press Ctrl+C to stop):")
+        i = 0
+        while True:
+            print(2 * i + 1, end=", ")
+            i += 1
+    else:
+        try:
+            a = int(a)
+            result = [2 * i + 1 for i in range(a)]
+            print("Output:", ", ".join(map(str, result)))
+        except ValueError:
+            print("Invalid input. Please enter a number or 'x'.")
+
+
+user_input = input("Enter a number (or 'x' for infinite series): ")
+generate_odd_series(user_input)
